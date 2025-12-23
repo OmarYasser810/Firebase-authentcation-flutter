@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "394944534448",
+    "project_id": "fire-base-connection-da87c",
+    "storage_bucket": "fire-base-connection-da87c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394944534448:android:f214da00ba669f97dd6875",
+        "android_client_info": {
+          "package_name": "com.example.fire_base_connection"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFL1GvgBpn6nEdlGcCxN9zYBUIdNySQ3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
