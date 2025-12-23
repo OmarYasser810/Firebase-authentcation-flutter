@@ -13,7 +13,6 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
 	final _firstNameController = TextEditingController();
 	final _lastNameController = TextEditingController();
-	final _bioController = TextEditingController();
 	final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 	final _confirmPasswordController = TextEditingController();
@@ -28,17 +27,15 @@ class _RegisterPageState extends State<RegisterPage> {
 		await addUserDetails(
 			_firstNameController.text.trim(),
 			_lastNameController.text.trim(),
-			_bioController.text.trim(),
 			_emailController.text.trim(),
 		);
 	}
 
-	Future addUserDetails(String firstName, String lastName, String bio, String email) async {
+	Future addUserDetails(String firstName, String lastName, String email) async {
 		// add user details to firestore
 		await FirebaseFirestore.instance.collection('users').add({
 			'first name': firstName,
 			'last name': lastName,
-			'bio': bio,
 			'email': email,
 		});
 	}
@@ -55,7 +52,6 @@ class _RegisterPageState extends State<RegisterPage> {
     _confirmPasswordController.dispose();
     _firstNameController.dispose();
     _lastNameController.dispose();
-    _bioController.dispose();
     super.dispose();
   }
 
@@ -119,29 +115,6 @@ class _RegisterPageState extends State<RegisterPage> {
 												decoration: InputDecoration(
 													border: InputBorder.none,
 													hintText: 'Last Name',
-												),
-											),
-										),
-									),
-								),
-								SizedBox(height: 10),
-
-								// bio textfield
-								Padding(
-									padding: const EdgeInsets.symmetric(horizontal: 25.0),
-									child: Container(
-										decoration: BoxDecoration(
-											color: Colors.grey[200],
-											border: Border.all(color: Colors.white),
-											borderRadius: BorderRadius.circular(12),
-										),
-										child: Padding(
-											padding: const EdgeInsets.only(left: 20.0),
-											child: TextField(
-												controller: _bioController,
-												decoration: InputDecoration(
-													border: InputBorder.none,
-													hintText: 'Bio',
 												),
 											),
 										),
